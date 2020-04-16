@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import "./index.css"
 import TopMenuLeft from '../../components/TopMenuLeft'
 import TopMenuRight from '../../components/topMenuRight'
-import ProjectCom from '../../components/Project'
+// import ProjectCom from '../../components/Project'
 import IntroductionCom from '../../components/Project'
 import BackTopCom from '../../components/BackTopCom'
 import ImageBeiAn from '../../static/image/备案图标.png'
@@ -19,7 +19,7 @@ export default class MainCom extends Component {
                     欢迎来到谷美的世界！
                 </div>
                 <section>
-                    <IntroductionCom/>
+                    {/* <IntroductionCom/> */}
                 </section>
                 <hr></hr>
                 <footer>
@@ -51,11 +51,14 @@ export default class MainCom extends Component {
                             style={{
                                 float:"left"
                             }}
-                            >豫公网安备 41081102000160号</span>    <span
+
+                            >豫公网安备 41081102000160号</span>    <a
                             style={{
-                                marginLeft:"20px"
+                                marginLeft:"20px",
+                                color:"#939393"
                             }}
-                            >鲁ICP备19023307号-1</span>
+                            href="http://beian.miit.gov.cn/"
+                            >鲁ICP备19023307号-1</a>
                             </a>
                     </div>
 		 

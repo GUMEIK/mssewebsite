@@ -55,7 +55,8 @@ export default class App extends React.Component {
           </Menu.ItemGroup> */}
         </SubMenu>
         <Menu.Item key="alipay">
-          <a href="http://www.msse.vip/videoEdu/" rel="noopener noreferrer">
+          {/* http://www.msse.vip/videoEdu/ */}
+          <a href="#" rel="noopener noreferrer">
             学习视频
           </a>
         </Menu.Item>
