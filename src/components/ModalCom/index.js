@@ -1,37 +1,23 @@
 import { Modal, Button } from 'antd';
 import React from 'react'
 export default class App extends React.Component {
-  state = { visible: false };
-
   showModal = () => {
-    this.setState({
-      visible: true,
-    });
+    this.props.showModal && this.props.showModal();
   };
 
   handleOk = e => {
-    console.log(e);
-    this.setState({
-      visible: false,
-    });
+    this.props.hideModal && this.props.hideModal();
   };
 
   handleCancel = e => {
-    console.log(e);
-    this.setState({
-      visible: false,
-    });
+    this.props.hideModal && this.props.hideModal();
   };
-
   render() {
     return (
       <div>
-        <Button type="primary" onClick={this.showModal}>
-          Open Modal
-        </Button>
         <Modal
-          title="Basic Modal"
-          visible={this.state.visible}
+          title={this.props.title}
+          visible={this.props.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
           width="85%"

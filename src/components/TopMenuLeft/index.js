@@ -6,7 +6,8 @@ import {
   AppstoreOutlined,
   WechatOutlined,
 } from '@ant-design/icons';
-
+import {projectShowAction} from '../../store/action/projectShow'
+import {store} from '../../store/store'
 const { SubMenu } = Menu;
 
 export default class App extends React.Component {
@@ -33,7 +34,11 @@ export default class App extends React.Component {
           {/* <MailOutlined /> */}
           关于我
         </Menu.Item>
-        <Menu.Item key="app">
+        <Menu.Item key="app"
+        onClick={()=>{
+          store.dispatch(projectShowAction)
+        }}
+        >
           <AppstoreOutlined />
           项目介绍
         </Menu.Item>
@@ -56,9 +61,9 @@ export default class App extends React.Component {
         </SubMenu>
         <Menu.Item key="alipay">
           {/* http://www.msse.vip/videoEdu/ */}
-          <a href="#" rel="noopener noreferrer">
+          {/* <a href="#" rel="noopener noreferrer"> */}
             学习视频
-          </a>
+          {/* </a> */}
         </Menu.Item>
       </Menu>
     );
