@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import ModalCom  from '../ModalCom'
 import {connect} from "react-redux"
 import {store} from '../../store/store'
-import ProjectCom from '../Project'
+import ProjectCom from '../Project' 
+import {projectShowAction,projectHideAction} from '../../store/action/modalControl'
 class ProjectShow extends Component {
     render() {
         return (
@@ -11,14 +12,10 @@ class ProjectShow extends Component {
                 title="项目介绍"
                 visible={this.props.isShowModal}
                 showModal={()=>{
-                    store.dispatch({
-                        type:"projectShow"
-                    })
+                    store.dispatch(projectShowAction)
                 }}
                 hideModal={()=>{
-                    store.dispatch({
-                        type:"projectHide"
-                    })
+                    store.dispatch(projectHideAction)
                 }}
                 >
                     <ProjectCom/>
@@ -31,7 +28,7 @@ class ProjectShow extends Component {
 
 function mapStateToProps (state){
     return {
-        isShowModal:state.projectShow
+        isShowModal:state.modalControl.projectShow
     }
 }
 const hoc = connect(mapStateToProps,null)

@@ -6,7 +6,7 @@ import {
   AppstoreOutlined,
   WechatOutlined,
 } from '@ant-design/icons';
-import {projectShowAction} from '../../store/action/projectShow'
+import {projectShowAction,introductionShowAction} from '../../store/action/modalControl'
 import {store} from '../../store/store'
 const { SubMenu } = Menu;
 
@@ -30,8 +30,12 @@ export default class App extends React.Component {
         // 根节点样式
         style={{height:"100%",lineHeight:"60px",backgroundColor:"transparent"}}
         >
-        <Menu.Item key="mail">
-          {/* <MailOutlined /> */}
+        <Menu.Item key="mail"
+        onClick={()=>{
+          store.dispatch(introductionShowAction)
+        }}
+        >
+          <MailOutlined />
           关于我
         </Menu.Item>
         <Menu.Item key="app"
