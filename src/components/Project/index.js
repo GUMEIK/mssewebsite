@@ -19,7 +19,7 @@ const DescriptionCom = (props)=>(
     </Descriptions.Item>
     <Descriptions.Item label="技术栈">{props.tec}</Descriptions.Item>
     <Descriptions.Item label="项目完成时间">{props.time}</Descriptions.Item>
-    <Descriptions.Item label="项目地址">
+    <Descriptions.Item label="源码地址">
         <a href={props.github}>github地址</a>
     </Descriptions.Item>
     <Descriptions.Item label="作者">谷美，一个文武双全的程序员</Descriptions.Item>
