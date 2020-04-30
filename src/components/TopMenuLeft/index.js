@@ -6,7 +6,7 @@ import {
   AppstoreOutlined,
   WechatOutlined,
 } from '@ant-design/icons';
-import {projectShowAction,introductionShowAction} from '../../store/action/modalControl'
+import {projectShowAction,introductionShowAction,commentsShowAction} from '../../store/action/modalControl'
 import {store} from '../../store/store'
 const { SubMenu } = Menu;
 
@@ -67,6 +67,15 @@ export default class App extends React.Component {
           <a href="http://www.msse.vip/gumeik/2019/videoEdu/" rel="noopener noreferrer">
             学习视频
           </a>
+        </Menu.Item>
+        <Menu.Item
+        onClick={
+          ()=>{
+            store.dispatch(commentsShowAction)
+          }
+        }
+        >
+            留言板
         </Menu.Item>
       </Menu>
     );
